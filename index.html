@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Percentagem</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <h1>Calculadora de Percentagem</h1>
+    </header>
+
+    <main class="main-content">
+        
+        <form class="calculator-form" onsubmit="calculatePercentage(event)">
+            <div class="input-group">
+                <label for="number">Dinheiro sujo:</label>
+                <input type="number" id="number" placeholder="Quantidade" required aria-required="true" class="custom-input">
+            </div>
+            <div class="input-group">
+                <label for="percentage">Percentagem (%):</label>
+                <input type="number" id="percentage" placeholder="Digite a percentagem" required aria-required="true" class="custom-input">
+            </div>
+            <div class="input-wrapper">
+                <b onclick="calculatePercentage(event)" class="neon-button">
+                    <span></span><span></span>
+                    <span></span><span></span>
+                    Calcular
+                </b>
+            </div>
+            <div class="result">
+                <p>Pagar: <span2 id="result"></span2></p>
+            </div>
+        </form>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; Mais facil impossivel   !</p>
+    </footer>
+
+    
+
+    <script src="script.js"></script>
+</body>
+</html>

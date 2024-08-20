@@ -1,0 +1,231 @@
+/* Estilo do botão neon */
+b {
+    position: relative;
+    display: block;
+    padding: 15px 25px;  /* Esticando mais o botão */
+    margin: 20px auto;   /* Centraliza o botão */
+    color: #03e9f4;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: 1.0s;
+    letter-spacing: 2px;
+    overflow: hidden;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+    width: 70%;          /* Largura do botão estendida */
+}
+
+b:hover {
+    background: #03e9f4;
+    color: #050801;
+    box-shadow: 0 0 5px #03e9f4,
+                0 0 25px #03e9f4,
+                0 0 50px #03e9f4,
+                0 0 200px #03e9f4;
+    -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
+}
+
+b span {
+    position: absolute;
+    display: block;
+}
+
+b span:nth-child(1) {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #03e9f4);
+    animation: animate1 1s linear infinite;
+}
+
+@keyframes animate1 {
+    0% {
+        left: -100%;
+    }
+
+    50%,
+    100% {
+        left: 100%;
+    }
+}
+
+b span:nth-child(2) {
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, #03e9f4);
+    animation: animate2 1s linear infinite;
+    animation-delay: 0.25s;
+}
+
+@keyframes animate2 {
+    0% {
+        top: -100%;
+    }
+
+    50%,
+    100% {
+        top: 100%;
+    }
+}
+
+b span:nth-child(3) {
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg, transparent, #03e9f4);
+    animation: animate3 1s linear infinite;
+    animation-delay: 0.50s;
+}
+
+@keyframes animate3 {
+    0% {
+        right: -100%;
+    }
+
+    50%,
+    100% {
+        right: 100%;
+    }
+}
+
+b span:nth-child(4) {
+    bottom: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg, transparent, #03e9f4);
+    animation: animate4 1s linear infinite;
+    animation-delay: 0.75s;
+}
+
+@keyframes animate4 {
+    0% {
+        bottom: -100%;
+    }
+
+    50%,
+    100% {
+        bottom: 100%;
+    }
+}
+
+/* Configurações básicas */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: url('background.png') no-repeat center center;
+    background-size: cover;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Estilos do Cabeçalho */
+.header {
+    background-color: #343a40;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+/* Conteúdo principal */
+.main-content {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Container Principal com Imagem de Fundo e Transparência */
+.calculator-form {
+    position: relative;
+    background: rgba(255, 255, 255, 0.3);
+    padding: 40px; /* Aumenta o padding */
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgb(250, 134, 1);
+    max-width: 500px; /* Aumenta a largura máxima */
+    width: 100%;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    overflow: hidden; /* Garante que o span não ultrapasse o container */
+}
+
+/* Estilos do grupo de entrada */
+.input-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    z-index: 1;
+    position: relative;
+    background: rgba(255, 255, 255, 0);
+}
+
+input[type="number"]:focus {
+    border-color: #80bdff;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.25);
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+/* Resultado */
+.result {
+    margin-top: 20px;
+    font-size: 1.5rem; /* Aumenta o tamanho do texto */
+    text-align: center;
+    z-index: 1;
+    position: relative;
+}
+
+.result span {
+    font-weight: bold;
+    color: #ffffff;
+    display: inline-block;
+    min-width: 80px; /* Largura mínima para manter a posição */
+}
+
+/* Rodapé */
+.footer {
+    background-color: rgba(52, 58, 64, 0.8);
+    color: rgb(255, 255, 255);
+    text-align: center;
+    padding: 15px 0;
+}
+
+.footer p {
+    margin: 0;
+    font-size: 0.875rem;
+}
